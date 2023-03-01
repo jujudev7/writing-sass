@@ -52,7 +52,8 @@ Ex: "scripts": {
   },
   
 # 7-1 pattern
-Here's an example sass directory from a project structured in 7-1 architecture, as depicted in the Sass Guidelines article: https://sass-guidelin.es/#architecture
+Here's an example sass directory from a project structured in 7-1 architecture, as depicted in the Sass Guidelines article :   
+https://sass-guidelin.es/#architecture  
 
 sass/  
 |  
