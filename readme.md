@@ -100,3 +100,40 @@ sass/
 |   …                     # Etc.  
 |  
 `– main.scss              # Main Sass file  
+
+# Install Autoprefixer, PsstCSS & PostCSS-CLI
+Autoprefixer is a PostCSS plugin which parse your CSS and add vendor prefixes using the Can I Use database (https://caniuse.com/) to determine which prefixes are needed.
+
+npm install autoprefixer postcss postcss-cli -g
+
+# Add Autoprefixer script
+1. Add a new script named "prefix" :
+"scripts": {
+ "sass": "sass ./sass/main.scss:./public/css/style.css -w --style compressed",
+ "prefix":
+}
+
+2. Tell to npm to use the new postcss package, and where to fin the CSS compiled file :
+"prefix": "postcss ./public/css/style.css"
+
+3. Tell to postcss package to use Autoprefixer with flag --use + autoprefixer :
+"prefix": "postcss ./public/css/style.css --use autoprefixer"
+
+4. Tell where to put the new prefixed CSS file :
+"prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
+
+# Tell to Autoprefixer which versions to verify
+1. Add a new key named "browserslist" :
+"scripts": {
+   "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
+},
+"author": "",
+"license": "ISC",
+"browserslist": 
+
+2. Specify versions
+Ex: "browserslist": "last 4 versions"
+
+# Run Autoprefixer
+npm run prefix
+-> prefixed folder is created with style.css file inside with prefix lines added automatically.
